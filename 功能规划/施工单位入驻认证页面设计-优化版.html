@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>施工单位入驻认证 - 页面设计</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 414px;
+            margin: 0 auto;
+            background: #fff;
+            min-height: 100vh;
+        }
+
+        /* 页面头部 */
+        .page-header {
+            background: linear-gradient(135deg, #52c41a 0%, #73d13d 100%);
+            color: #fff;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(82, 196, 26, 0.15);
+        }
+
+        .back-btn {
+            font-size: 20px;
+            margin-right: 12px;
+            cursor: pointer;
+        }
+
+        .page-title {
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        /* 步骤指示器 */
+        .step-indicator {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 24px 0;
+            gap: 12px;
+        }
+
+        .step-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #d9d9d9;
+            transition: all 0.3s;
+        }
+
+        .step-dot.active {
+            width: 24px;
+            border-radius: 5px;
+            background: #52c41a;
+        }
+
+        /* 内容区域 */
+        .content {
+            padding: 0 20px 80px;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 500;
+            color: #333;
+            margin: 24px 0 16px;
+        }
+
+        /* 提示信息 */
+        .info-box {
+            background: #e6f7ff;
+            border: 1px solid #91d5ff;
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 20px;
+            font-size: 13px;
+            color: #0050b3;
+        }
+
+        .info-box.success {
+            background: #f6ffed;
+            border-color: #b7eb8f;
+            color: #389e0d;
+        }
+
+        /* 选择卡片 */
+        .choice-card {
+            background: #fff;
+            border: 2px solid #e8e8e8;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .choice-card:hover {
+            border-color: #52c41a;
+            box-shadow: 0 4px 12px rgba(82, 196, 26, 0.1);
+        }
+
+        .choice-card-content {
+            flex: 1;
+        }
+
+        .choice-card-icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .choice-card-title {
+            font-size: 16px;
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 4px;
+        }
+
+        .choice-card-desc {
+            font-size: 13px;
+            color: #999;
+        }
+
+        .choice-card-arrow {
+            font-size: 20px;
+            color: #d9d9d9;
+        }
+
+        /* 表单项 */
+        .form-item {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .form-label .required {
+            color: #ff4d4f;
+            margin-right: 4px;
+        }
+
+        .form-input {
+            width: 100%;
+            height: 44px;
+            border: 1px solid #e8e8e8;
+            border-radius: 8px;
+            padding: 0 12px;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #52c41a;
+            box-shadow: 0 0 0 2px rgba(82, 196, 26, 0.1);
+        }
+
+        .form-input::placeholder {
+            color: #bfbfbf;
+        }
+
+        /* 上传按钮 */
+        .upload-btn {
+            width: 100%;
+            height: 100px;
+            border: 2px dashed #d9d9d9;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: #fafafa;
+        }
+
+        .upload-btn:hover {
+            border-color: #52c41a;
+            background: #f6ffed;
+        }
+
+        .upload-icon {
+            font-size: 32px;
+            color: #52c41a;
+            margin-bottom: 8px;
+        }
+
+        .upload-text {
+            font-size: 13px;
+            color: #999;
+        }
+
+        /* 底部按钮 */
+        .bottom-actions {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: 414px;
+            width: 100%;
+            background: #fff;
+            padding: 12px 20px;
+            box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            flex: 1;
+            height: 44px;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary {
+            background: #f5f5f5;
+            color: #666;
+        }
+
+        .btn-secondary:hover {
+            background: #e8e8e8;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #52c41a 0%, #73d13d 100%);
+            color: #fff;
+            box-shadow: 0 2px 8px rgba(82, 196, 26, 0.3);
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 4px 12px rgba(82, 196, 26, 0.4);
+            transform: translateY(-1px);
+        }
+
+        /* 页面分隔 */
+        .page-divider {
+            height: 40px;
+            background: #f5f7fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 14px;
+            margin: 40px -20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 页面1: 选择入驻方式 -->
+        <div class="page-header">
+            <span class="back-btn">←</span>
+            <span class="page-title">企业入驻申请</span>
+        </div>
+
+        <div class="step-indicator">
+            <div class="step-dot active"></div>
+            <div class="step-dot"></div>
+            <div class="step-dot"></div>
+        </div>
+
+        <div class="content">
+            <div class="section-title">选择入驻方式</div>
+
+            <div class="choice-card" onclick="selectMethod('legal')">
+                <div class="choice-card-content">
+                    <div class="choice-card-icon">👤</div>
+                    <div class="choice-card-title">我是法人</div>
+                    <div class="choice-card-desc">直接使用法人身份申请入驻,无需填写申请人信息</div>
+                </div>
+                <div class="choice-card-arrow">›</div>
+            </div>
+
+            <div class="choice-card" onclick="selectMethod('authorized')">
+                <div class="choice-card-content">
+                    <div class="choice-card-icon">📄</div>
+                    <div class="choice-card-title">我是授权人员</div>
+                    <div class="choice-card-desc">持有企业授权书申请入驻,需填写申请人信息</div>
+                </div>
+                <div class="choice-card-arrow">›</div>
+            </div>
+        </div>
+
+        <div class="page-divider">━━━━━ 下一页 ━━━━━</div>
+
+        <!-- 页面2: 填写企业信息 -->
+        <div class="page-header">
+            <span class="back-btn">←</span>
+            <span class="page-title">企业入驻申请</span>
+        </div>
+
+        <div class="step-indicator">
+            <div class="step-dot"></div>
+            <div class="step-dot active"></div>
+            <div class="step-dot"></div>
+        </div>
+
+        <div class="content">
+            <div class="section-title">企业基本信息</div>
+
+            <div class="form-item">
+                <label class="form-label">
+                    <span class="required">*</span>营业执照
+                </label>
+                <div class="upload-btn">
+                    <div class="upload-icon">📤</div>
+                    <div class="upload-text">点击上传</div>
+                </div>
+            </div>
+
+            <div class="form-item">
+                <label class="form-label">
+                    <span class="required">*</span>企业名称
+                </label>
+                <input type="text" class="form-input" placeholder="上传照片自动识别">
+            </div>
+
+            <div class="form-item">
+                <label class="form-label">
+                    <span class="required">*</span>统一信用代码
+                </label>
+                <input type="text" class="form-input" placeholder="上传照片自动识别">
+            </div>
+
+            <div class="form-item">
+                <label class="form-label">
+                    <span class="required">*</span>法人姓名
+                </label>
+                <input type="text" class="form-input" placeholder="上传照片自动识别">
+            </div>
+
+            <div class="form-item">
+                <label class="form-label">
+                    <span class="required">*</span>资质证明
+                </label>
+                <div class="upload-btn">
+                    <div class="upload-icon">📤</div>
+                    <div class="upload-text">点击上传</div>
+                </div>
+            </div>
+
+            <div class="form-item">
+                <label class="form-label">
+                    <span class="required">*</span>资质有效期
+                </label>
+                <input type="date" class="form-input">
+            </div>
+
+            <div class="form-item">
+                <label class="form-label">
+                    <span class="required">*</span>安全生产许可证
+                </label>
+                <div class="upload-btn">
+                    <div class="upload-icon">📤</div>
+                    <div class="upload-text">点击上传</div>
+                </div>
+            </div>
+
+            <div class="form-item">
+                <label class="form-label">
+                    <span class="required">*</span>法人身份证
+                </label>
+                <div style="display: flex; gap: 12px;">
+                    <div class="upload-btn" style="flex: 1; height: 80px;">
+                        <div class="upload-icon" style="font-size: 24px;">📤</div>
+                        <div class="upload-text">正面</div>
+                    </div>
+                    <div class="upload-btn" style="flex: 1; height: 80px;">
+                        <div class="upload-icon" style="font-size: 24px;">📤</div>
+                        <div class="upload-text">反面</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-item">
+                <label class="form-label">
+                    <span class="required">*</span>法人手持身份证
+                </label>
+                <div class="upload-btn">
+                    <div class="upload-icon">📤</div>
+                    <div class="upload-text">请上传法人手持身份证照片</div>
+                </div>
+            </div>
+
+            <div class="form-item">
+                <label class="form-label">
+                    <span class="required">*</span>法人手机号
+                </label>
+                <input type="tel" class="form-input" placeholder="请输入">
+            </div>
+        </div>
+
+        <div class="bottom-actions">
+            <button class="btn btn-secondary">上一步</button>
+            <button class="btn btn-primary" id="nextBtn">下一步</button>
+        </div>
+
+        <div class="page-divider" style="margin-top: 100px;">━━━━━ 法人入驻流程结束 ━━━━━</div>
+
+        <!-- 页面2.5: 法人入驻确认页面 -->
+        <div class="page-header">
+            <span class="back-btn">←</span>
+            <span class="page-title">企业入驻申请</span>
+        </div>
+
+        <div class="step-indicator">
+            <div class="step-dot"></div>
+            <div class="step-dot"></div>
+            <div class="step-dot active"></div>
+        </div>
+
+        <div class="content">
+            <div class="section-title">确认提交</div>
+
+            <div class="info-box success">
+                <strong>✓ 法人入驻</strong><br>
+                您选择了法人入驻方式,系统将自动使用法人信息作为申请人信息,无需重复填写。
+            </div>
+
+            <div class="form-item">
+                <label class="form-label">申请人信息</label>
+                <div style="background: #fafafa; padding: 16px; border-radius: 8px; font-size: 14px; color: #666;">
+                    <div style="margin-bottom: 8px;">• 申请人姓名: 与法人姓名一致</div>
+                    <div style="margin-bottom: 8px;">• 申请人身份证号: 与法人身份证号一致</div>
+                    <div>• 申请人手机号: 与法人手机号一致</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-actions">
+            <button class="btn btn-secondary">上一步</button>
+            <button class="btn btn-primary">提交申请</button>
+        </div>
+
+        <div class="page-divider" style="margin-top: 100px;">━━━━━ 授权入驻流程 ━━━━━</div>
+
+        <!-- 页面3: 填写申请人信息(仅授权入驻) -->
+        <div class="page-header">
+            <span class="back-btn">←</span>
+            <span class="page-title">企业入驻申请</span>
+        </div>
+
+        <div class="step-indicator">
+            <div class="step-dot"></div>
+            <div class="step-dot"></div>
+            <div class="step-dot active"></div>
+        </div>
+
+        <div class="content">
+            <div class="section-title">申请人信息</div>
+
+            <div class="info-box">
+                <strong>ℹ 授权入驻</strong><br>
+                您选择了授权入驻方式,需要填写申请人信息并上传授权书。申请人信息不能与法人信息完全一致。
+            </div>
+
+            <div class="form-item">
+                <label class="form-label">
+                    <span class="required">*</span>申请人身份证
+                </label>
+                <div style="display: flex; gap: 12px;">
+                    <div class="upload-btn" style="flex: 1; height: 80px;">
+                        <div class="upload-icon" style="font-size: 24px;">📤</div>
+                        <div class="upload-text">正面</div>
+                    </div>
+                    <div class="upload-btn" style="flex: 1; height: 80px;">
+                        <div class="upload-icon" style="font-size: 24px;">📤</div>
+                        <div class="upload-text">反面</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-item">
+                <label class="form-label">
+                    <span class="required">*</span>申请人姓名
+                </label>
+                <input type="text" class="form-input" placeholder="上传照片自动识别">
+            </div>
+
+            <div class="form-item">
+                <label class="form-label">
+                    <span class="required">*</span>申请人身份证号
+                </label>
+                <input type="text" class="form-input" placeholder="上传照片自动识别">
+            </div>
+
+            <div class="form-item">
+                <label class="form-label">
+                    <span class="required">*</span>申请人手机号
+                </label>
+                <input type="tel" class="form-input" placeholder="请输入">
+            </div>
+
+            <div class="form-item">
+                <label class="form-label">
+                    <span class="required">*</span>授权书
+                </label>
+                <div class="upload-btn">
+                    <div class="upload-icon">📤</div>
+                    <div class="upload-text">请上传企业法人签字盖章的授权书</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-actions">
+            <button class="btn btn-secondary">上一步</button>
+            <button class="btn btn-primary">提交申请</button>
+        </div>
+    </div>
+
+    <script>
+        let selectedMethod = 'legal'; // 默认法人入驻
+
+        function selectMethod(method) {
+            selectedMethod = method;
+            if (method === 'legal') {
+                alert('已选择:法人入驻\n填写完企业信息后将直接提交申请,无需填写申请人信息');
+            } else {
+                alert('已选择:授权入驻\n填写完企业信息后需要填写申请人信息并上传授权书');
+            }
+        }
+
+        // 模拟下一步按钮逻辑
+        document.getElementById('nextBtn')?.addEventListener('click', function() {
+            if (selectedMethod === 'legal') {
+                alert('法人入驻:跳转到确认提交页面');
+            } else {
+                alert('授权入驻:跳转到填写申请人信息页面');
+            }
+        });
+    </script>
+</body>
+</html>
