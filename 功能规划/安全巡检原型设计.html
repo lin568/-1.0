@@ -1154,141 +1154,177 @@ h1 { text-align: center; font-size: 20px; font-weight: 600; color: #1a1a1a; marg
 <div class="phone-wrap">
   <div class="phone">
     <div class="phone-notch"><div class="phone-notch-inner"></div></div>
-    <div class="phone-screen">
+    <div class="phone-screen" style="position:relative;">
       <div class="status-bar"><span>9:41</span><span>🔋⚡</span></div>
       <div class="nav-bar">
         <div class="nav-back">‹</div>
         <div class="nav-title">提交整改记录</div>
       </div>
-      <div class="alert alert-danger">
-        ⛔ 工程当前处于<b>停工整改</b>状态，请尽快完成所有违规整改
+      <!-- 巡查信息头 -->
+      <div style="background:#e6f4ff;padding:8px 14px;border-bottom:1px solid #91caff;flex-shrink:0;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:3px;">
+          <span style="font-size:11px;color:#0958d9;font-weight:600;">NS2026031011360192</span>
+          <span style="font-size:11px;color:#888;">2026-03-10</span>
+        </div>
+        <div style="font-size:12px;color:#333;font-weight:500;">福田某住宅楼改造工程</div>
+        <div style="font-size:11px;color:#888;margin-top:1px;">巡查员：李巡查员 · 福田街道</div>
+      </div>
+      <div class="alert alert-danger" style="margin:8px 12px 0;">
+        ⛔ 工程处于<b>停工整改</b>状态，请完成所有违规整改后提交
       </div>
       <div class="scroll-area">
 
-        <!-- 违规1：待整改 -->
+        <!-- 违规1 分区 -->
         <div style="margin:10px 12px 0;background:#fff;border-radius:10px;border:1px solid #ffa39e;overflow:hidden;">
-          <div style="background:#fff1f0;padding:8px 14px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffa39e;">
-            <span style="font-size:12px;font-weight:600;color:#cf1322;">⛔ 高空作业违规</span>
-            <span class="tag tag-orange">待整改</span>
+          <div style="background:#fff1f0;padding:7px 14px;display:flex;align-items:center;gap:8px;border-bottom:1px solid #ffa39e;">
+            <span class="tag tag-red" style="font-size:10px;padding:1px 6px;">停工整改</span>
+            <span style="font-size:12px;font-weight:600;color:#cf1322;">高空作业违规</span>
           </div>
-          <div style="padding:10px 14px;">
+          <div style="padding:8px 14px;">
             <div class="field-row"><span class="field-label">整改要求</span><span class="field-value">施工人员必须正确穿戴安全绳</span></div>
             <div class="field-row"><span class="field-label">整改期限</span><span class="field-value" style="color:#ff4d4f;font-weight:500;">2026-03-15（剩余5天）</span></div>
-            <div class="field-row"><span class="field-label">登记人</span><span class="field-value">李巡查员 · 2026-03-10</span></div>
             <div class="divider"></div>
             <div class="input-group">
-              <div class="input-label input-required">整改说明</div>
-              <textarea class="input-textarea" placeholder="请填写整改措施和完成情况..."></textarea>
+              <div class="input-label input-required" style="font-size:11px;">整改说明</div>
+              <textarea class="input-textarea" placeholder="填写整改措施..."></textarea>
             </div>
-            <div class="input-group" style="margin-bottom:10px;">
-              <div class="input-label input-required">整改照片</div>
-              <div class="photo-upload">
+            <div class="input-group" style="margin-bottom:0;">
+              <div class="input-label input-required" style="font-size:11px;">整改照片</div>
+              <div class="photo-upload" style="margin-top:4px;">
                 <div class="photo-add">+</div>
                 <div class="photo-add">+</div>
-                <div style="width:52px;height:52px;display:flex;align-items:center;justify-content:center;font-size:10px;color:#bbb;">最多9张</div>
               </div>
             </div>
-            <div class="btn btn-danger btn-block">提交此条整改</div>
           </div>
         </div>
 
-        <!-- 违规2：已提交待审核 -->
-        <div style="margin:10px 12px 0;background:#fff;border-radius:10px;border:1px solid #91caff;overflow:hidden;">
-          <div style="background:#e6f4ff;padding:8px 14px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #91caff;">
-            <span style="font-size:12px;font-weight:600;color:#0958d9;">⚠ 未佩戴安全帽</span>
-            <span class="tag tag-blue">待审核</span>
+        <!-- 违规2 分区 -->
+        <div style="margin:8px 12px 0;background:#fff;border-radius:10px;border:1px solid #ffd591;overflow:hidden;">
+          <div style="background:#fffbe6;padding:7px 14px;display:flex;align-items:center;gap:8px;border-bottom:1px solid #ffd591;">
+            <span class="tag tag-orange" style="font-size:10px;padding:1px 6px;">现场整改</span>
+            <span style="font-size:12px;font-weight:600;color:#d46b08;">未佩戴安全帽</span>
           </div>
-          <div style="padding:10px 14px;">
-            <div class="field-row"><span class="field-label">整改说明</span><span class="field-value" style="color:#888;">已为所有工人配发安全帽并进行教育...</span></div>
-            <div class="field-row"><span class="field-label">提交时间</span><span class="field-value" style="color:#888;">2026-03-11 14:30</span></div>
-            <div style="font-size:11px;color:#1677ff;background:#f0f7ff;padding:6px 8px;border-radius:4px;margin-top:4px;">
-              等待审核员审核中，请耐心等待
+          <div style="padding:8px 14px;">
+            <div class="field-row"><span class="field-label">整改要求</span><span class="field-value">为所有工人配备安全帽并强制执行</span></div>
+            <div class="field-row"><span class="field-label">整改期限</span><span class="field-value">2026-03-15（剩余5天）</span></div>
+            <div class="divider"></div>
+            <div class="input-group">
+              <div class="input-label input-required" style="font-size:11px;">整改说明</div>
+              <textarea class="input-textarea" placeholder="填写整改措施..."></textarea>
+            </div>
+            <div class="input-group" style="margin-bottom:0;">
+              <div class="input-label input-required" style="font-size:11px;">整改照片</div>
+              <div class="photo-upload" style="margin-top:4px;">
+                <div class="photo-add">+</div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div style="height:20px;"></div>
+        <div style="height:80px;"></div>
+      </div>
+      <div class="bottom-bar">
+        <div class="btn btn-primary btn-block" style="font-size:14px;">提交整改记录（2条违规）</div>
       </div>
     </div>
     <div class="phone-home"><div class="phone-home-bar"></div></div>
   </div>
-  <div class="phone-label">P6 · 整改提交（施工方）<br>逐条提交，互不影响</div>
+  <div class="phone-label">P6 · 整改提交（施工方）<br>一次提交，包含所有违规</div>
 </div>
 
 <!-- P7 整改审核（审核员） -->
 <div class="phone-wrap">
   <div class="phone">
     <div class="phone-notch"><div class="phone-notch-inner"></div></div>
-    <div class="phone-screen">
+    <div class="phone-screen" style="position:relative;">
       <div class="status-bar"><span>9:41</span><span>🔋⚡</span></div>
       <div class="nav-bar">
         <div class="nav-back">‹</div>
-        <div class="nav-title">整改审核</div>
-        <div class="nav-action">1条待审</div>
+        <div class="nav-title">审核整改记录</div>
+      </div>
+      <!-- 整改记录头 -->
+      <div style="background:#fffbe6;padding:8px 14px;border-bottom:1px solid #ffd591;flex-shrink:0;">
+        <div style="display:flex;justify-content:space-between;margin-bottom:2px;">
+          <span style="font-size:11px;font-weight:600;color:#7c6300;">NS2026031011360192</span>
+          <span style="font-size:11px;color:#888;">巡查 2026-03-10</span>
+        </div>
+        <div style="font-size:12px;color:#333;font-weight:500;">福田某住宅楼改造工程</div>
+        <div style="font-size:11px;color:#888;margin-top:1px;">施工方提交：2026-03-12 14:30</div>
+        <div style="font-size:10px;color:#d46b08;margin-top:4px;">⚠ 驳回后施工方需重新提交完整整改记录</div>
       </div>
       <div class="scroll-area">
-        <div style="margin:10px 12px 0;background:#fff;border-radius:10px;border:1px solid #91caff;overflow:hidden;">
-          <!-- 违规信息 -->
-          <div style="background:#e6f4ff;padding:8px 14px;border-bottom:1px solid #91caff;">
-            <div style="font-size:12px;font-weight:600;color:#0958d9;margin-bottom:3px;">⚠ 未佩戴安全帽 · 待审核</div>
-            <div style="font-size:11px;color:#888;">福田某住宅楼改造工程 · 2026-03-10 登记</div>
+
+        <!-- 违规1 -->
+        <div style="margin:10px 12px 0;background:#fff;border-radius:10px;border:1px solid #f0f0f0;overflow:hidden;">
+          <div style="background:#fff1f0;padding:7px 14px;display:flex;align-items:center;gap:8px;border-bottom:1px solid #ffa39e;">
+            <span class="tag tag-red" style="font-size:10px;padding:1px 6px;">停工整改</span>
+            <span style="font-size:12px;font-weight:600;color:#cf1322;">高空作业违规</span>
           </div>
-          <div style="padding:10px 14px;">
-
-            <!-- 原始违规 -->
-            <div style="font-size:11px;font-weight:600;color:#555;margin-bottom:6px;">◎ 原始违规记录</div>
-            <div class="field-row"><span class="field-label">违规描述</span><span class="field-value">多名工人进入施工区域时未佩戴安全帽</span></div>
-            <div class="field-row"><span class="field-label">整改要求</span><span class="field-value">为所有施工人员配备安全帽并强制执行</span></div>
+          <div style="padding:8px 14px;">
+            <div style="font-size:11px;color:#888;font-weight:500;margin-bottom:4px;">原始违规</div>
+            <div class="field-row"><span class="field-label">违规描述</span><span class="field-value">未正确穿戴安全绳，3楼外墙悬空作业</span></div>
             <div style="margin-bottom:8px;">
-              <div class="field-label" style="font-size:11px;margin-bottom:4px;">违规现场照片</div>
-              <div class="photo-upload">
-                <div class="photo-thumb">📷</div>
-                <div class="photo-thumb">📷</div>
-              </div>
+              <div style="font-size:11px;color:#999;margin-bottom:4px;">隐患照片</div>
+              <div class="photo-upload"><div class="photo-thumb">📷</div><div class="photo-thumb">📷</div></div>
             </div>
             <div class="divider"></div>
-
-            <!-- 施工方整改 -->
-            <div style="font-size:11px;font-weight:600;color:#555;margin-bottom:6px;">◎ 施工方整改记录</div>
-            <div class="field-row"><span class="field-label">整改说明</span><span class="field-value">已为所有工人配发安全帽，进行安全教育培训，现场已督查落实</span></div>
-            <div class="field-row"><span class="field-label">提交时间</span><span class="field-value">2026-03-11 14:30</span></div>
-            <div style="margin-bottom:10px;">
-              <div class="field-label" style="font-size:11px;margin-bottom:4px;">整改照片</div>
-              <div class="photo-upload">
-                <div class="photo-thumb">📷</div>
-                <div class="photo-thumb">📷</div>
-                <div class="photo-thumb">📷</div>
-              </div>
+            <div style="font-size:11px;color:#888;font-weight:500;margin-bottom:4px;">施工方整改材料</div>
+            <div class="field-row"><span class="field-label">整改说明</span><span class="field-value">已为所有高处作业人员配发安全绳并培训</span></div>
+            <div style="margin-bottom:4px;">
+              <div style="font-size:11px;color:#999;margin-bottom:4px;">整改照片</div>
+              <div class="photo-upload"><div class="photo-thumb">📷</div><div class="photo-thumb">📷</div><div class="photo-thumb">📷</div></div>
             </div>
-            <div class="divider"></div>
-
-            <!-- 审核操作 -->
-            <div style="font-size:11px;font-weight:600;color:#555;margin-bottom:8px;">◎ 审核操作</div>
-            <div class="review-tabs">
-              <div class="review-tab pass">✓ 审核通过</div>
-              <div class="review-tab">✗ 驳回</div>
-            </div>
-            <div class="input-group">
-              <div class="input-label input-required" style="font-size:11px;">上传验收照片</div>
-              <div class="photo-upload" style="margin-top:4px;">
-                <div class="photo-thumb">📷</div>
-                <div class="photo-add">+</div>
-              </div>
-            </div>
-            <div class="input-group" style="margin-bottom:10px;">
-              <div class="input-label" style="font-size:11px;">验收说明（选填）</div>
-              <textarea class="input-textarea" style="height:50px;" placeholder="填写验收说明..."></textarea>
-            </div>
-            <div class="btn btn-green btn-block">确认通过</div>
-
           </div>
         </div>
-        <div style="height:20px;"></div>
+
+        <!-- 违规2 -->
+        <div style="margin:8px 12px 0;background:#fff;border-radius:10px;border:1px solid #f0f0f0;overflow:hidden;">
+          <div style="background:#fffbe6;padding:7px 14px;display:flex;align-items:center;gap:8px;border-bottom:1px solid #ffd591;">
+            <span class="tag tag-orange" style="font-size:10px;padding:1px 6px;">现场整改</span>
+            <span style="font-size:12px;font-weight:600;color:#d46b08;">未佩戴安全帽</span>
+          </div>
+          <div style="padding:8px 14px;">
+            <div style="font-size:11px;color:#888;font-weight:500;margin-bottom:4px;">原始违规</div>
+            <div class="field-row"><span class="field-label">违规描述</span><span class="field-value">多名工人进入施工区域时未佩戴安全帽</span></div>
+            <div style="margin-bottom:8px;">
+              <div style="font-size:11px;color:#999;margin-bottom:4px;">隐患照片</div>
+              <div class="photo-upload"><div class="photo-thumb">📷</div></div>
+            </div>
+            <div class="divider"></div>
+            <div style="font-size:11px;color:#888;font-weight:500;margin-bottom:4px;">施工方整改材料</div>
+            <div class="field-row"><span class="field-label">整改说明</span><span class="field-value">已配发安全帽，进行安全教育，现场督查</span></div>
+            <div style="margin-bottom:4px;">
+              <div style="font-size:11px;color:#999;margin-bottom:4px;">整改照片</div>
+              <div class="photo-upload"><div class="photo-thumb">📷</div><div class="photo-thumb">📷</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 验收照片 -->
+        <div class="card" style="margin-top:8px;">
+          <div class="card-header" style="font-size:12px;">验收材料（通过时必填）</div>
+          <div class="card-body">
+            <div class="input-group">
+              <div class="input-label input-required" style="font-size:11px;">验收照片</div>
+              <div class="photo-upload"><div class="photo-thumb">📷</div><div class="photo-add">+</div></div>
+            </div>
+            <div class="input-group" style="margin-bottom:0;">
+              <div class="input-label" style="font-size:11px;">验收说明（选填）</div>
+              <textarea class="input-textarea" style="height:44px;" placeholder="填写验收说明..."></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div style="height:80px;"></div>
+      </div>
+      <div class="bottom-bar">
+        <div class="btn btn-danger" style="flex:1;">驳回</div>
+        <div class="btn btn-primary" style="flex:2;">审核通过</div>
       </div>
     </div>
     <div class="phone-home"><div class="phone-home-bar"></div></div>
   </div>
-  <div class="phone-label">P7 · 整改审核（审核员）<br>同组织内部审核</div>
+  <div class="phone-label">P7 · 整改审核（审核员）<br>整体通过 or 整体驳回</div>
 </div>
 
 </div><!-- /screens -->
@@ -1297,7 +1333,7 @@ h1 { text-align: center; font-size: 20px; font-weight: 600; color: #1a1a1a; marg
 <div class="group-title">跟踪与详情：整改跟踪 · 巡查详情</div>
 <div class="screens">
 
-<!-- P8 整改跟踪（监管人员） -->
+<!-- P8 整改跟踪（按项目） -->
 <div class="phone-wrap">
   <div class="phone">
     <div class="phone-notch"><div class="phone-notch-inner"></div></div>
@@ -1308,85 +1344,134 @@ h1 { text-align: center; font-size: 20px; font-weight: 600; color: #1a1a1a; marg
         <div class="nav-title">整改跟踪</div>
       </div>
       <div class="search-bar">
-        <div class="search-wrap" style="margin-bottom:8px;">
+        <div class="search-wrap" style="margin-bottom:7px;">
           <span class="search-icon">🔍</span>
           <input class="search-input" placeholder="搜索工程名称或地址">
         </div>
         <div style="display:flex;gap:8px;">
-          <div class="input-field" style="flex:1;padding:5px 8px;font-size:11px;color:#888;">整改状态 全部 ▾</div>
+          <div class="input-field" style="flex:1;padding:5px 8px;font-size:11px;color:#1677ff;">有逾期 ▾</div>
           <div class="input-field" style="flex:1;padding:5px 8px;font-size:11px;color:#888;">时间范围 ▾</div>
         </div>
       </div>
       <div class="scroll-area">
 
-        <!-- 已逾期 -->
-        <div class="card" style="margin-top:10px;border-left:3px solid #ff4d4f;">
-          <div style="padding:10px 14px;">
-            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
-              <span style="font-size:12px;font-weight:600;">福田某住宅楼改造工程</span>
-              <span class="tag tag-red">已逾期</span>
+        <!-- 工程卡1：逾期 -->
+        <div class="proj-card suspend" style="margin-top:10px;">
+          <div class="proj-name">
+            <span style="font-size:13px;">福田某住宅楼改造工程</span>
+            <span class="tag tag-red" style="font-size:10px;padding:1px 6px;">停工整改</span>
+          </div>
+          <div class="proj-info">📍 福田区园岭街道中心路88号</div>
+          <!-- 整改状态摘要 -->
+          <div class="proj-stats" style="margin-top:8px;">
+            <div class="proj-stat-item">
+              <div class="proj-stat-num danger">1</div>
+              <div class="proj-stat-label">已逾期</div>
             </div>
-            <div class="field-row"><span class="field-label">违规类型</span><span class="field-value">高空作业违规</span></div>
-            <div class="field-row"><span class="field-label">整改期限</span><span class="field-value" style="color:#ff4d4f;">2026-03-08（已逾期2天）</span></div>
-            <div style="display:flex;gap:8px;margin-top:8px;">
-              <div class="btn btn-default btn-sm" style="flex:1;">查看详情</div>
-              <div class="btn btn-orange btn-sm" style="flex:1;">催办整改</div>
-              <div class="btn btn-danger btn-sm" style="flex:1;">移交执法</div>
+            <div class="proj-stat-divider"></div>
+            <div class="proj-stat-item">
+              <div class="proj-stat-num" style="color:#fa8c16;">1</div>
+              <div class="proj-stat-label">待整改</div>
             </div>
+            <div class="proj-stat-divider"></div>
+            <div class="proj-stat-item">
+              <div class="proj-stat-num muted">0</div>
+              <div class="proj-stat-label">已完成</div>
+            </div>
+          </div>
+          <div style="font-size:10px;color:#bbb;margin-top:6px;">最近巡查 03-10 · 整改未提交</div>
+          <div style="display:flex;gap:6px;margin-top:8px;">
+            <div class="btn btn-orange btn-sm" style="flex:1;">催办整改</div>
+            <div class="btn btn-danger btn-sm" style="flex:1;">移交执法</div>
           </div>
         </div>
 
-        <!-- 待审核 -->
-        <div class="card" style="border-left:3px solid #1677ff;">
-          <div style="padding:10px 14px;">
-            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
-              <span style="font-size:12px;font-weight:600;">南山某商铺装修工程</span>
-              <span class="tag tag-blue">待审核</span>
+        <!-- 工程卡2：待审核 -->
+        <div class="proj-card" style="border-left-color:#1677ff;">
+          <div class="proj-name">
+            <span style="font-size:13px;">南山某商铺装修工程</span>
+            <span class="tag tag-blue" style="font-size:10px;padding:1px 6px;">待审核</span>
+          </div>
+          <div class="proj-info">📍 南山区南头街道文昌路12号</div>
+          <div class="proj-stats" style="margin-top:8px;">
+            <div class="proj-stat-item">
+              <div class="proj-stat-num muted">0</div>
+              <div class="proj-stat-label">已逾期</div>
             </div>
-            <div class="field-row"><span class="field-label">违规类型</span><span class="field-value">未佩戴安全帽</span></div>
-            <div class="field-row"><span class="field-label">整改期限</span><span class="field-value">2026-03-15（剩余5天）</span></div>
-            <div style="display:flex;gap:8px;margin-top:8px;">
-              <div class="btn btn-default btn-sm">查看详情</div>
+            <div class="proj-stat-divider"></div>
+            <div class="proj-stat-item">
+              <div class="proj-stat-num" style="color:#1677ff;">1</div>
+              <div class="proj-stat-label">待审核</div>
             </div>
+            <div class="proj-stat-divider"></div>
+            <div class="proj-stat-item">
+              <div class="proj-stat-num muted">1</div>
+              <div class="proj-stat-label">已完成</div>
+            </div>
+          </div>
+          <div style="font-size:10px;color:#bbb;margin-top:6px;">整改提交 03-12 · 等待审核员审核</div>
+        </div>
+
+        <!-- 工程卡3：待整改 -->
+        <div class="proj-card onsite">
+          <div class="proj-name">
+            <span style="font-size:13px;">龙华某住宅装修工程</span>
+            <span class="tag tag-orange" style="font-size:10px;padding:1px 6px;">现场整改</span>
+          </div>
+          <div class="proj-info">📍 龙华区龙华街道和平路56号</div>
+          <div class="proj-stats" style="margin-top:8px;">
+            <div class="proj-stat-item">
+              <div class="proj-stat-num muted">0</div>
+              <div class="proj-stat-label">已逾期</div>
+            </div>
+            <div class="proj-stat-divider"></div>
+            <div class="proj-stat-item">
+              <div class="proj-stat-num" style="color:#fa8c16;">2</div>
+              <div class="proj-stat-label">待整改</div>
+            </div>
+            <div class="proj-stat-divider"></div>
+            <div class="proj-stat-item">
+              <div class="proj-stat-num muted">0</div>
+              <div class="proj-stat-label">已完成</div>
+            </div>
+          </div>
+          <div style="font-size:10px;color:#bbb;margin-top:6px;">最近巡查 03-08 · 剩余10天</div>
+          <div style="display:flex;gap:6px;margin-top:8px;">
+            <div class="btn btn-orange btn-sm" style="flex:1;">催办整改</div>
           </div>
         </div>
 
-        <!-- 待整改 -->
-        <div class="card" style="border-left:3px solid #fa8c16;">
-          <div style="padding:10px 14px;">
-            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
-              <span style="font-size:12px;font-weight:600;">龙华某住宅装修工程</span>
-              <span class="tag tag-orange">待整改</span>
+        <!-- 工程卡4：已完成（低调） -->
+        <div class="proj-card normal" style="opacity:.65;">
+          <div class="proj-name">
+            <span style="font-size:13px;">宝安某外墙修缮工程</span>
+            <span class="tag tag-green" style="font-size:10px;padding:1px 6px;">整改完成</span>
+          </div>
+          <div class="proj-info">📍 宝安区新安街道兴业路99号</div>
+          <div class="proj-stats" style="margin-top:8px;">
+            <div class="proj-stat-item">
+              <div class="proj-stat-num muted">0</div>
+              <div class="proj-stat-label">已逾期</div>
             </div>
-            <div class="field-row"><span class="field-label">违规类型</span><span class="field-value">动火作业违规</span></div>
-            <div class="field-row"><span class="field-label">整改期限</span><span class="field-value">2026-03-20（剩余10天）</span></div>
-            <div style="display:flex;gap:8px;margin-top:8px;">
-              <div class="btn btn-default btn-sm" style="flex:1;">查看详情</div>
-              <div class="btn btn-orange btn-sm" style="flex:1;">催办整改</div>
+            <div class="proj-stat-divider"></div>
+            <div class="proj-stat-item">
+              <div class="proj-stat-num muted">0</div>
+              <div class="proj-stat-label">待整改</div>
+            </div>
+            <div class="proj-stat-divider"></div>
+            <div class="proj-stat-item">
+              <div class="proj-stat-num muted">2</div>
+              <div class="proj-stat-label">已完成</div>
             </div>
           </div>
-        </div>
-
-        <!-- 已完成 -->
-        <div class="card" style="border-left:3px solid #52c41a;opacity:.7;">
-          <div style="padding:10px 14px;">
-            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
-              <span style="font-size:12px;font-weight:600;">宝安某外墙修缮工程</span>
-              <span class="tag tag-green">已完成</span>
-            </div>
-            <div class="field-row"><span class="field-label">违规类型</span><span class="field-value">施工现场脏乱差</span></div>
-            <div class="field-row"><span class="field-label">完成时间</span><span class="field-value">2026-03-09</span></div>
-            <div style="display:flex;gap:8px;margin-top:8px;">
-              <div class="btn btn-default btn-sm">查看详情</div>
-            </div>
-          </div>
+          <div style="font-size:10px;color:#bbb;margin-top:6px;">整改完成 03-09</div>
         </div>
 
       </div>
     </div>
     <div class="phone-home"><div class="phone-home-bar"></div></div>
   </div>
-  <div class="phone-label">P8 · 整改跟踪<br>监管人员视角</div>
+  <div class="phone-label">P8 · 整改跟踪<br>按项目聚合，巡查员/监管视角</div>
 </div>
 
 <!-- P9 巡查详情 -->
