@@ -275,12 +275,157 @@ h1 { text-align: center; font-size: 20px; font-weight: 600; color: #1a1a1a; marg
 .proj-header { background: #fff; padding: 12px 14px; border-bottom: 1px solid #f0f0f0; flex-shrink: 0; }
 .proj-header-name { font-size: 15px; font-weight: 600; color: #1a1a1a; margin-bottom: 6px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .proj-header-info { font-size: 11px; color: #888; line-height: 1.8; }
+
+/* ── 工程卡片：风险/特殊施工标签行 ── */
+.proj-tags { display: flex; gap: 4px; flex-wrap: wrap; margin: 4px 0 6px; }
+.tag-purple { background: #f9f0ff; color: #531dab; border: 1px solid #d3adf7; }
+
+/* ── 工程卡片：组织巡查统计行 ── */
+.proj-stats {
+  margin-top: 8px; padding-top: 8px; border-top: 1px solid #f5f5f5;
+  display: flex; align-items: stretch;
+}
+.proj-stat-item {
+  flex: 1; text-align: center; padding: 2px 0;
+  display: flex; flex-direction: column; gap: 2px; align-items: center;
+}
+.proj-stat-num { font-size: 15px; font-weight: 700; color: #1677ff; line-height: 1.2; }
+.proj-stat-num.danger { color: #ff4d4f; }
+.proj-stat-num.muted  { color: #52c41a; }
+.proj-stat-label { font-size: 10px; color: #999; }
+.proj-stat-divider { width: 1px; background: #f0f0f0; margin: 4px 0; align-self: stretch; }
+
+/* ── P2 顶部：位置栏 ── */
+.loc-bar {
+  background: linear-gradient(180deg, #ddeaff 0%, #e8f0fd 100%);
+  padding: 7px 14px; display: flex; align-items: center; gap: 3px;
+  font-size: 13px; font-weight: 600; color: #222; flex-shrink: 0;
+}
+.loc-arrow { font-size: 12px; color: #aaa; margin-left: 1px; }
+
+/* ── P2 顶部：新搜索栏 ── */
+.search-bar-v2 {
+  background: linear-gradient(180deg, #e8f0fd 0%, #dde7f8 100%);
+  padding: 8px 12px; flex-shrink: 0;
+}
+.search-input-wrap-v2 {
+  background: #fff; border-radius: 24px;
+  display: flex; align-items: center; overflow: hidden;
+  box-shadow: 0 1px 6px rgba(0,0,0,.1); height: 36px;
+}
+.search-type-sel {
+  padding: 0 10px; height: 100%;
+  display: flex; align-items: center; gap: 3px;
+  font-size: 12px; color: #444; flex-shrink: 0;
+  border-right: 1px solid #eee; white-space: nowrap;
+}
+.search-text-v2 {
+  flex: 1; padding: 0 10px; height: 100%;
+  font-size: 12px; color: #bbb; border: none; background: transparent;
+}
+.search-btn-v2 {
+  padding: 0 14px; height: 100%;
+  display: flex; align-items: center;
+  font-size: 13px; font-weight: 600; color: #1677ff; flex-shrink: 0;
+}
+
+/* ── P2 顶部：胶囊类型 Tab ── */
+.pill-tab-bar {
+  background: linear-gradient(180deg, #dde7f8 0%, #d0dff5 100%);
+  padding: 10px 12px 18px; display: flex; gap: 8px; flex-shrink: 0;
+}
+.pill-tab {
+  flex: 1; text-align: center; padding: 7px 4px;
+  border-radius: 20px; font-size: 12px; font-weight: 500;
+  color: #666; background: rgba(255,255,255,.55); position: relative;
+}
+.pill-tab.active {
+  background: #3da678; color: #fff;
+}
+.pill-tab.active::after {
+  content: ''; position: absolute;
+  bottom: -9px; left: 50%; transform: translateX(-50%);
+  border-left: 7px solid transparent; border-right: 7px solid transparent;
+  border-top: 9px solid #3da678;
+}
+
+/* ── P2 顶部：状态 Tab + 数量徽章 ── */
+.status-tab-bar {
+  background: #fff; display: flex; gap: 0;
+  border-bottom: 1px solid #f0f0f0; overflow-x: auto; flex-shrink: 0;
+}
+.status-tab {
+  display: flex; align-items: center; gap: 5px;
+  padding: 9px 12px; font-size: 12px; color: #888;
+  white-space: nowrap; border-bottom: 2px solid transparent; flex-shrink: 0;
+}
+.status-tab.active { color: #1677ff; font-weight: 500; border-bottom-color: #1677ff; }
+.status-count {
+  background: #e0e0e0; color: #777;
+  border-radius: 8px; padding: 1px 6px;
+  font-size: 10px; font-weight: 500;
+}
+.status-tab.active .status-count { background: #e6f4ff; color: #1677ff; }
+
+/* ── P1 身份栏 ── */
+.identity-bar {
+  background: linear-gradient(135deg, #1677ff 0%, #0958d9 100%);
+  padding: 9px 16px; display: flex; align-items: center; gap: 10px; flex-shrink: 0;
+}
+.identity-avatar {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: rgba(255,255,255,.25);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; color: #fff; font-weight: 700; flex-shrink: 0;
+}
+.identity-info { flex: 1; min-width: 0; }
+.identity-name { font-size: 13px; font-weight: 600; color: #fff; line-height: 1.4; }
+.identity-role { font-size: 11px; color: rgba(255,255,255,.8); line-height: 1.3; }
+.identity-switch-btn {
+  display: flex; align-items: center; gap: 3px;
+  background: rgba(255,255,255,.22); border-radius: 12px;
+  padding: 4px 10px; font-size: 11px; color: rgba(255,255,255,.95);
+  white-space: nowrap; flex-shrink: 0; cursor: pointer;
+}
+
+/* ── 角色切换底部弹层 ── */
+.role-sheet-overlay {
+  position: absolute; inset: 0; background: rgba(0,0,0,.45); z-index: 10;
+  display: flex; align-items: flex-end;
+}
+.role-sheet {
+  background: #fff; border-radius: 16px 16px 0 0;
+  width: 100%; padding-bottom: 20px;
+}
+.role-sheet-handle {
+  width: 36px; height: 4px; background: #ddd; border-radius: 2px;
+  margin: 10px auto 8px;
+}
+.role-sheet-title {
+  padding: 4px 16px 12px;
+  font-size: 14px; font-weight: 600; color: #1a1a1a;
+  border-bottom: 1px solid #f0f0f0;
+}
+.role-option {
+  display: flex; align-items: center; gap: 12px;
+  padding: 13px 16px; border-bottom: 1px solid #f5f5f5; cursor: pointer;
+}
+.role-option:last-child { border-bottom: none; }
+.role-option-ava {
+  width: 38px; height: 38px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 15px; font-weight: 700; color: #fff; flex-shrink: 0;
+}
+.role-option-info { flex: 1; }
+.role-option-name { font-size: 13px; font-weight: 500; color: #1a1a1a; line-height: 1.4; }
+.role-option-org { font-size: 11px; color: #999; line-height: 1.4; }
+.role-option-current { font-size: 16px; color: #1677ff; }
 </style>
 </head>
 <body>
 
 <h1>安全巡检原型设计</h1>
-<p class="meta">小型工程管理系统 · 安全巡检模块 · 共 9 个页面</p>
+<p class="meta">小型工程管理系统 · 安全巡检模块 · 共 10 个页面</p>
 
 <!-- ══════════ 第一组：主流程 ══════════ -->
 <div class="group-title">主流程：首页 → 工程列表 → 工程详情</div>
@@ -292,7 +437,19 @@ h1 { text-align: center; font-size: 20px; font-weight: 600; color: #1a1a1a; marg
     <div class="phone-notch"><div class="phone-notch-inner"></div></div>
     <div class="phone-screen">
       <div class="status-bar"><span>9:41</span><span>🔋⚡</span></div>
-      <div class="nav-bar"><div class="nav-title">安全巡检</div></div>
+      <div class="nav-bar">
+        <div class="nav-title">安全巡检</div>
+        <div class="nav-action">🔔</div>
+      </div>
+      <!-- 当前身份栏 -->
+      <div class="identity-bar">
+        <div class="identity-avatar">张</div>
+        <div class="identity-info">
+          <div class="identity-name">张三</div>
+          <div class="identity-role">夏阳街道 · 巡查员</div>
+        </div>
+        <div class="identity-switch-btn">切换身份 ▾</div>
+      </div>
       <div class="scroll-area">
 
         <!-- 在建工程统计 -->
@@ -364,11 +521,158 @@ h1 { text-align: center; font-size: 20px; font-weight: 600; color: #1a1a1a; marg
           </div>
         </div>
 
+        <!-- 我的巡查统计 -->
+        <div class="card">
+          <div class="card-header">
+            我的巡查统计
+            <span style="font-size:11px;color:#999;font-weight:400;">本月（3月）</span>
+          </div>
+          <div style="display:flex;padding:10px 10px 12px;">
+            <div style="flex:1;text-align:center;padding:6px 4px;">
+              <div style="font-size:22px;font-weight:700;color:#1677ff;">12</div>
+              <div style="font-size:10px;color:#888;margin-top:2px;">已完成巡查</div>
+            </div>
+            <div style="width:1px;background:#f0f0f0;margin:4px 0;"></div>
+            <div style="flex:1;text-align:center;padding:6px 4px;">
+              <div style="font-size:22px;font-weight:700;color:#ff4d4f;">5</div>
+              <div style="font-size:10px;color:#888;margin-top:2px;">发现违规</div>
+            </div>
+            <div style="width:1px;background:#f0f0f0;margin:4px 0;"></div>
+            <div style="flex:1;text-align:center;padding:6px 4px;">
+              <div style="font-size:22px;font-weight:700;color:#fa8c16;">3</div>
+              <div style="font-size:10px;color:#888;margin-top:2px;">待跟进整改</div>
+            </div>
+          </div>
+          <!-- 累计数据 -->
+          <div style="border-top:1px solid #f5f5f5;display:flex;padding:8px 14px;gap:16px;">
+            <div style="font-size:11px;color:#999;">累计巡查 <span style="color:#333;font-weight:600;">86</span> 次</div>
+            <div style="font-size:11px;color:#999;">累计发现违规 <span style="color:#333;font-weight:600;">24</span> 条</div>
+          </div>
+        </div>
+
+        <!-- 最近巡查记录 -->
+        <div class="card">
+          <div class="card-header">
+            最近巡查记录
+            <span style="font-size:12px;color:#1677ff;font-weight:400;">全部 ›</span>
+          </div>
+          <div class="card-body" style="padding:4px 14px;">
+
+            <div class="record-item">
+              <div class="record-dot" style="background:#ff4d4f;"></div>
+              <div class="record-main">
+                <div class="record-title">福田某住宅楼改造工程</div>
+                <div class="record-sub">2026-03-10 · 发现违规 2 条 · <span style="color:#ff4d4f;">停工整改</span></div>
+              </div>
+              <span style="font-size:11px;color:#bbb;">›</span>
+            </div>
+
+            <div class="record-item">
+              <div class="record-dot" style="background:#52c41a;"></div>
+              <div class="record-main">
+                <div class="record-title">宝安某小区外墙修缮</div>
+                <div class="record-sub">2026-03-09 · 未发现违规 · 正常施工</div>
+              </div>
+              <span style="font-size:11px;color:#bbb;">›</span>
+            </div>
+
+            <div class="record-item" style="border-bottom:none;">
+              <div class="record-dot" style="background:#fa8c16;"></div>
+              <div class="record-main">
+                <div class="record-title">南山某商铺装修工程</div>
+                <div class="record-sub">2026-03-08 · 发现违规 1 条 · <span style="color:#fa8c16;">现场整改</span></div>
+              </div>
+              <span style="font-size:11px;color:#bbb;">›</span>
+            </div>
+
+          </div>
+        </div>
+
       </div>
     </div>
     <div class="phone-home"><div class="phone-home-bar"></div></div>
   </div>
   <div class="phone-label">P1 · 安全巡检首页<br>巡查人员视角</div>
+</div>
+
+<!-- P1b 切换身份弹层 -->
+<div class="phone-wrap">
+  <div class="phone">
+    <div class="phone-notch"><div class="phone-notch-inner"></div></div>
+    <div class="phone-screen" style="position:relative;">
+      <div class="status-bar"><span>9:41</span><span>🔋⚡</span></div>
+      <div class="nav-bar">
+        <div class="nav-title">安全巡检</div>
+        <div class="nav-action">🔔</div>
+      </div>
+      <!-- 身份栏（当前已激活切换，背景变暗） -->
+      <div class="identity-bar" style="opacity:.55;">
+        <div class="identity-avatar">张</div>
+        <div class="identity-info">
+          <div class="identity-name">张三</div>
+          <div class="identity-role">夏阳街道 · 巡查员</div>
+        </div>
+        <div class="identity-switch-btn">切换身份 ▾</div>
+      </div>
+      <!-- 首页内容（模糊背景） -->
+      <div style="flex:1;filter:blur(2px) brightness(.85);pointer-events:none;overflow:hidden;">
+        <div class="card" style="margin-top:10px;">
+          <div class="card-header">在建工程统计</div>
+          <div style="display:flex;padding:10px;">
+            <div style="flex:1;text-align:center;"><div style="font-size:20px;font-weight:700;color:#1677ff;">8</div><div style="font-size:10px;color:#888;">小型工程</div></div>
+            <div style="width:1px;background:#f0f0f0;margin:4px 0;"></div>
+            <div style="flex:1;text-align:center;"><div style="font-size:20px;font-weight:700;color:#52c41a;">23</div><div style="font-size:10px;color:#888;">住宅装修</div></div>
+            <div style="width:1px;background:#f0f0f0;margin:4px 0;"></div>
+            <div style="flex:1;text-align:center;"><div style="font-size:20px;font-weight:700;color:#fa8c16;">11</div><div style="font-size:10px;color:#888;">零星作业</div></div>
+          </div>
+        </div>
+        <div class="big-stat" style="margin-top:8px;">
+          <div><div class="big-stat-num">7</div><div class="big-stat-label">个工程待巡查</div></div>
+          <div class="big-stat-icon">📋</div>
+        </div>
+      </div>
+
+      <!-- 底部弹层 -->
+      <div class="role-sheet-overlay">
+        <div class="role-sheet">
+          <div class="role-sheet-handle"></div>
+          <div class="role-sheet-title">切换当前身份</div>
+
+          <!-- 选项1：当前激活 -->
+          <div class="role-option" style="background:#f0f7ff;">
+            <div class="role-option-ava" style="background:#1677ff;">张</div>
+            <div class="role-option-info">
+              <div class="role-option-name">夏阳街道巡查员</div>
+              <div class="role-option-org">夏阳街道安全生产管理办公室</div>
+            </div>
+            <div class="role-option-current">✓</div>
+          </div>
+
+          <!-- 选项2 -->
+          <div class="role-option">
+            <div class="role-option-ava" style="background:#52c41a;">张</div>
+            <div class="role-option-info">
+              <div class="role-option-name">城南街道巡查员</div>
+              <div class="role-option-org">城南街道安全生产管理办公室</div>
+            </div>
+          </div>
+
+          <!-- 选项3 -->
+          <div class="role-option">
+            <div class="role-option-ava" style="background:#fa8c16;">张</div>
+            <div class="role-option-info">
+              <div class="role-option-name">蓬江区监管人员</div>
+              <div class="role-option-org">蓬江区住房和建设局</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+    <div class="phone-home"><div class="phone-home-bar"></div></div>
+  </div>
+  <div class="phone-label">P1b · 切换身份弹层<br>支持多角色/跨街道场景</div>
 </div>
 
 <!-- P2 工程列表 -->
@@ -381,84 +685,162 @@ h1 { text-align: center; font-size: 20px; font-weight: 600; color: #1a1a1a; marg
         <div class="nav-back">‹</div>
         <div class="nav-title">全部工程</div>
       </div>
-      <div class="search-bar">
-        <div class="search-wrap">
-          <span class="search-icon">🔍</span>
-          <input class="search-input" placeholder="搜索工程名称或地址">
+      <!-- 位置选择 -->
+      <div class="loc-bar">
+        <span style="font-size:13px;color:#888;">📍</span>
+        <span>南山区</span>
+        <span class="loc-arrow">›</span>
+      </div>
+      <!-- 搜索栏 -->
+      <div class="search-bar-v2">
+        <div class="search-input-wrap-v2">
+          <div class="search-type-sel">工程名称 <span style="font-size:10px;color:#bbb;">▾</span></div>
+          <input class="search-text-v2" placeholder="请输入工程名称">
+          <div class="search-btn-v2">搜索</div>
         </div>
       </div>
-      <div class="tab-bar">
-        <div class="tab-item active">全部</div>
-        <div class="tab-item">小型工程</div>
-        <div class="tab-item">住宅装修</div>
-        <div class="tab-item">零星作业</div>
+      <!-- 工程类型 胶囊 Tab -->
+      <div class="pill-tab-bar">
+        <div class="pill-tab active">小型工程(2)</div>
+        <div class="pill-tab">住宅装修</div>
+        <div class="pill-tab">零星作业</div>
       </div>
-      <div class="tab-bar" style="border-top:1px solid #f5f5f5;">
-        <div class="tab-item active">全部</div>
-        <div class="tab-item" style="color:#389e0d;">正常</div>
-        <div class="tab-item" style="color:#d46b08;">现场整改</div>
-        <div class="tab-item" style="color:#cf1322;">停工</div>
-        <div class="tab-item" style="color:#888;">已核销</div>
+      <!-- 工程状态 Tab + 数量 -->
+      <div class="status-tab-bar">
+        <div class="status-tab active">正常施工 <span class="status-count">1283</span></div>
+        <div class="status-tab">现场整改 <span class="status-count">172</span></div>
+        <div class="status-tab">停工整改 <span class="status-count">33</span></div>
+        <div class="status-tab">已核销 <span class="status-count">58</span></div>
       </div>
       <div class="scroll-area" style="padding-top:10px;">
 
+        <!-- 卡片1：高风险 + 夜间施工 + 停工整改 -->
         <div class="proj-card suspend">
           <div class="proj-name">
             <span style="font-size:13px;">福田某住宅楼改造工程</span>
             <span class="tag tag-red">停工整改</span>
           </div>
+          <div class="proj-tags">
+            <span class="tag tag-red" style="font-size:10px;padding:1px 6px;">🔴 高风险</span>
+            <span class="tag tag-purple" style="font-size:10px;padding:1px 6px;">🌙 夜间施工</span>
+          </div>
           <div class="proj-info">
             📍 福田区园岭街道中心路88号<br>
-            🏢 深圳市XX建设有限公司
+            🏢 深圳市XX建设有限公司<br>
+            📅 2025-12-01 ~ 2026-06-30
           </div>
-          <div class="proj-footer">
-            <span style="font-size:11px;color:#ff4d4f;">⚠ 超期5天未巡查</span>
-            <span style="font-size:11px;color:#999;">最近：3天前</span>
+          <div class="proj-stats">
+            <div class="proj-stat-item">
+              <div class="proj-stat-num">5</div>
+              <div class="proj-stat-label">本组织巡查</div>
+            </div>
+            <div class="proj-stat-divider"></div>
+            <div class="proj-stat-item">
+              <div class="proj-stat-num danger">2</div>
+              <div class="proj-stat-label">当前隐患</div>
+            </div>
+            <div class="proj-stat-divider"></div>
+            <div class="proj-stat-item">
+              <div class="proj-stat-num danger">8天</div>
+              <div class="proj-stat-label">未巡查 ⚠</div>
+            </div>
           </div>
         </div>
 
+        <!-- 卡片2：高风险 + 现场整改 -->
         <div class="proj-card onsite">
           <div class="proj-name">
             <span style="font-size:13px;">南山某商铺装修工程</span>
             <span class="tag tag-orange">现场整改</span>
           </div>
+          <div class="proj-tags">
+            <span class="tag tag-red" style="font-size:10px;padding:1px 6px;">🔴 高风险</span>
+          </div>
           <div class="proj-info">
             📍 南山区科技园南路22号<br>
-            🏢 深圳市YY装饰有限公司
+            🏢 深圳市YY装饰有限公司<br>
+            📅 2026-01-10 ~ 2026-05-30
           </div>
-          <div class="proj-footer">
-            <span style="font-size:11px;color:#fa8c16;">整改中，剩余3天</span>
-            <span style="font-size:11px;color:#999;">最近：1天前</span>
+          <div class="proj-stats">
+            <div class="proj-stat-item">
+              <div class="proj-stat-num">3</div>
+              <div class="proj-stat-label">本组织巡查</div>
+            </div>
+            <div class="proj-stat-divider"></div>
+            <div class="proj-stat-item">
+              <div class="proj-stat-num danger">1</div>
+              <div class="proj-stat-label">当前隐患</div>
+            </div>
+            <div class="proj-stat-divider"></div>
+            <div class="proj-stat-item">
+              <div class="proj-stat-num" style="color:#fa8c16;">1天</div>
+              <div class="proj-stat-label">未巡查</div>
+            </div>
           </div>
         </div>
 
+        <!-- 卡片3：一般项目 + 周末施工 + 正常施工 -->
         <div class="proj-card normal">
           <div class="proj-name">
             <span style="font-size:13px;">宝安某小区外墙修缮</span>
             <span class="tag tag-green">正常施工</span>
           </div>
+          <div class="proj-tags">
+            <span class="tag tag-gray" style="font-size:10px;padding:1px 6px;">一般项目</span>
+            <span class="tag tag-purple" style="font-size:10px;padding:1px 6px;">📅 周末施工</span>
+          </div>
           <div class="proj-info">
             📍 宝安区新安街道海城路15号<br>
-            🏢 深圳市ZZ工程有限公司
+            🏢 深圳市ZZ工程有限公司<br>
+            📅 2026-02-01 ~ 2026-04-30
           </div>
-          <div class="proj-footer">
-            <span style="font-size:11px;color:#888;">施工中</span>
-            <span style="font-size:11px;color:#999;">最近：2天前</span>
+          <div class="proj-stats">
+            <div class="proj-stat-item">
+              <div class="proj-stat-num">8</div>
+              <div class="proj-stat-label">本组织巡查</div>
+            </div>
+            <div class="proj-stat-divider"></div>
+            <div class="proj-stat-item">
+              <div class="proj-stat-num muted">0</div>
+              <div class="proj-stat-label">当前隐患</div>
+            </div>
+            <div class="proj-stat-divider"></div>
+            <div class="proj-stat-item">
+              <div class="proj-stat-num">2天</div>
+              <div class="proj-stat-label">未巡查</div>
+            </div>
           </div>
         </div>
 
+        <!-- 卡片4：一般项目 + 正常施工 + 尚未巡查 -->
         <div class="proj-card normal">
           <div class="proj-name">
             <span style="font-size:13px;">龙华某住宅室内装修</span>
             <span class="tag tag-green">正常施工</span>
           </div>
+          <div class="proj-tags">
+            <span class="tag tag-gray" style="font-size:10px;padding:1px 6px;">一般项目</span>
+          </div>
           <div class="proj-info">
             📍 龙华区民治街道民旺路58号<br>
-            🏢 深圳市WW家居有限公司
+            🏢 深圳市WW家居有限公司<br>
+            📅 2026-03-01 ~ 2026-08-31
           </div>
-          <div class="proj-footer">
-            <span style="font-size:11px;color:#fa8c16;">⚠ 超期2天未巡查</span>
-            <span style="font-size:11px;color:#999;">尚未巡查</span>
+          <div class="proj-stats">
+            <div class="proj-stat-item">
+              <div class="proj-stat-num muted">0</div>
+              <div class="proj-stat-label">本组织巡查</div>
+            </div>
+            <div class="proj-stat-divider"></div>
+            <div class="proj-stat-item">
+              <div class="proj-stat-num muted">0</div>
+              <div class="proj-stat-label">当前隐患</div>
+            </div>
+            <div class="proj-stat-divider"></div>
+            <div class="proj-stat-item">
+              <div class="proj-stat-num danger">—</div>
+              <div class="proj-stat-label">尚未巡查</div>
+            </div>
           </div>
         </div>
 
